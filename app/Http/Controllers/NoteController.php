@@ -47,7 +47,7 @@ class NoteController extends Controller
 
             $message = $validation->messages()->toArray();
             return response()
-                        ->json(['error' => $message['content'][0]] );
+                        ->json(['error' => $message['content'][0]], 422 );
         }
 
        $note = note::create($request->all());
@@ -115,7 +115,7 @@ class NoteController extends Controller
             $message = $validation->messages()->toArray();
 
             return response()
-                        ->json(['error' => $message['content'][0]] );
+                        ->json(['error' => $message['content'][0]], 422 );
         }
 
         $note->update($request->all());
