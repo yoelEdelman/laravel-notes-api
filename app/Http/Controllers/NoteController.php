@@ -15,7 +15,7 @@ class NoteController extends Controller
     public function index()
     {
         return response()
-                    ->json(['error' => Null, 'Notes' => Note::all()]);
+                    ->json(['error' => Null, 'notes' => Note::all()]);
 
     }
 
@@ -53,7 +53,7 @@ class NoteController extends Controller
        $note = note::create($request->all());
 
         return response()
-                    ->json(['error' => Null, 'Note' => $note->id]);
+                    ->json(['error' => Null, 'note' => $note->id]);
 
     }
 
@@ -70,7 +70,7 @@ class NoteController extends Controller
 
         if ($result){
             return response()
-                        ->json(["error" => Null, 'Note' => $result]);
+                        ->json(["error" => Null, 'note' => $result]);
         } else{
             return response()
                         ->json(["error" => "Cet identifiant est inconnu"], 404);
@@ -121,7 +121,7 @@ class NoteController extends Controller
         $note->update($request->all());
 
         return response()
-                    ->json(['error' => Null, 'Note' => $note->id]);
+                    ->json(['error' => Null, 'note' => $note->id]);
 
     }
 
