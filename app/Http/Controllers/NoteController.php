@@ -53,7 +53,7 @@ class NoteController extends Controller
        $note = note::create($request->all());
 
         return response()
-                    ->json(['error' => Null, 'note' => $note->id]);
+                    ->json(['error' => Null, 'note' => $note]);
 
     }
 
@@ -121,7 +121,7 @@ class NoteController extends Controller
         $note->update($request->all());
 
         return response()
-                    ->json(['error' => Null, 'note' => $note->id]);
+                    ->json(['error' => Null, 'note' => $note]);
 
     }
 
